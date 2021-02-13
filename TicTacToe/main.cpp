@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 //Hazel: I played the game a few times  it think the "?" symbol is fine but the grid needs some ajustments so that i appears bigger.
+//Hazel: error message  needs to appear so that players do not click the same spot.
 static string line1 = "???";
 static string line2 = "???";
 static string line3 = "???";
