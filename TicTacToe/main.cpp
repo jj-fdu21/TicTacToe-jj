@@ -1,23 +1,28 @@
+//Coded by Jeffrey, Robert, and Michael. Initial code was started Thursday night, beginning with the pre-plan process and psuedocode. 
+//Code was finished and ready for final revisions by QA on Monday at 12 p.m.
+
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
 #include <string>
 #include <array>
 using namespace std;
+
 //Initialization of Variables that are used throughout the entire program
 static string line1 = "?  ?  ?";
 static string line2 = "?  ?  ?";
 static string line3 = "?  ?  ?";
-static string player1Indicator = "X";
-static string player2Indicator = "O";
+static string player1Indicator = "X"; //Assigned "X" to player one 
+static string player2Indicator = "O"; //Asssigned "O" to player two
 static int moveInput;
 static int moves[9];
+
 //Method used for checking valid moves, making sure no duplicate moves and no numbers greater than 9 or less than 1
 int checkValidMove(int num)
 {
 	int check = 1;
 	int check1 = 1;
-	if (num > 10 || num < 1)
+	if (num > 10 || num < 1) //User input validation
 	{
 		while (check != 0)
 		{
@@ -158,6 +163,7 @@ void makeMovePlayer2(int spot)
 	}
 }
 //Method to check to see if Player 1 has won the game with a match 3
+//This function checks all 8 possibilities for player 1 to win (3 horizontal, 3 vertical, 2 diagonal)
 bool checkWinPlayer1()
 {
 	if (line1 == "X  X  X")
@@ -225,6 +231,7 @@ bool checkWinPlayer1()
 	return false;
 }
 //Method to check to see if Player 2 has won the game with a match 3
+//This function checks all 8 possibilities for player 2 to win (3 horizontal, 3 vertical, 2 diagonal)
 bool checkWinPlayer2()
 {
 	if (line1 == "O  O  O")
@@ -307,7 +314,7 @@ int main()
 		//While loop to have the turns constantly go, max amount of turns in a game is 8 so this loop will have each player go 4 times before ending.
 		while (turnCount != 4)
 		{
-			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
 			//Calls the validmove method to check if the move is valid or not.
@@ -330,7 +337,7 @@ int main()
 			turnCount++;
 			cout << endl;
 			//This is the same thing has above but for Player 2.
-			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
 			checkValidMove(moveInput);
@@ -349,7 +356,7 @@ int main()
 			
 		}
 		//After the loop ends the last 9th turn is made.
-		cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+		cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 		cout << line1 << endl << line2 << endl << line3 << endl;
 		cin >> moveInput;
 		checkValidMove(moveInput);
@@ -367,7 +374,7 @@ int main()
 		//If no winner is declared from the checkwin method always returning false, the game ends in a draw.
 		system("CLS");
 		cout << line1 << endl << line2 << endl << line3 << endl;
-		cout << "The Game Ends in a Draw!" << endl;
+		cout << "The Game ends in a Draw!" << endl;
 		cout << endl;		
 	}
 	//Same code as above, but in the case Player 2 gets to play first.
@@ -376,7 +383,7 @@ int main()
 		cout << "Player 2 Goes First" << endl;
 		while (turnCount != 4)
 		{
-			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
 			checkValidMove(moveInput);
@@ -393,7 +400,7 @@ int main()
 			}
 			turnCount++;
 			cout << endl;
-			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
 			checkValidMove(moveInput);
@@ -410,7 +417,7 @@ int main()
 			}
 			cout << endl;
 		}
-		cout << "Player 2 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+		cout << "Player 2 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 		cout << line1 << endl << line2 << endl << line3 << endl;
 		cin >> moveInput;
 		checkValidMove(moveInput);
