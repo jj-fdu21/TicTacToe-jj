@@ -172,7 +172,7 @@ bool checkWinPlayer1()
 	{
 		return true;
 	}
-	if (line1.substr(0,1) == "X")
+	if (line1.substr(0,1) == "X") //Testing comment
 	{
 		if (line2.substr(0, 1) == "X")
 		{
