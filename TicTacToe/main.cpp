@@ -30,7 +30,7 @@ int checkValidMove(int num)
 			{
 				system("CLS");
 				cout << line1 << endl << line2 << endl << line3 << endl;
-				cout << "Invalid Move. Please Enter a Valid Move (1-9)" << endl;
+				cout << "Invalid Move at space: " << num << " . Please Enter a Valid Move (1 = Top Left , 9 = Bottom Right)" << endl;
 				cin >> num;
 			}
 			if (num <= 9 && num >= 1)
@@ -48,7 +48,7 @@ int checkValidMove(int num)
 			{
 				system("CLS");
 				cout << line1 << endl << line2 << endl << line3 << endl;
-				cout << "That Move Has Already Been Made, Please Make A Different Move (1-9)" << endl;
+				cout << "That Move Has Already Been Made: " << num << ", Please Make A Different Move (1 = Top Left , 9 = Bottom Right)" << endl;
 				cin >> num;
 				i--;
 			}
@@ -59,7 +59,7 @@ int checkValidMove(int num)
 			{
 				system("CLS");
 				cout << line1 << endl << line2 << endl << line3 << endl;
-				cout << "Invalid Move. Please Enter a Valid Move (1-9)" << endl;
+				cout << "Invalid Move at space: " << num << " . Please Enter a Valid Move (1 = Top Left , 9 = Bottom Right)" << endl;
 				cin >> num;
 			}
 			if (num <= 9 && num >= 1)
@@ -306,6 +306,16 @@ int main()
 			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
+			//Checks input to see if it is a number or a string , if the input is a string the program will ask for reinput.
+			while (!cin >> moveInput) 
+			{
+				cout << "INVALID INPUT." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+				cout << line1 << endl << line2 << endl << line3 << endl;
+				cin >> moveInput;
+			}
 			//Calls the validmove method to check if the move is valid or not.
 			checkValidMove(moveInput);
 			//Places the move selected into an array for input validation in the validmove method.
@@ -329,6 +339,15 @@ int main()
 			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
+			while (!cin >> moveInput) 
+			{
+				cout << "INVALID INPUT." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+				cout << line1 << endl << line2 << endl << line3 << endl;
+				cin >> moveInput;
+			}
 			checkValidMove(moveInput);
 			moves[moveCount] = moveInput;
 			moveCount++;
@@ -348,6 +367,15 @@ int main()
 		cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 		cout << line1 << endl << line2 << endl << line3 << endl;
 		cin >> moveInput;
+		while (!cin >> moveInput) 
+		{
+			cout << "INVALID INPUT." << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+			cout << line1 << endl << line2 << endl << line3 << endl;
+			cin >> moveInput;
+		}
 		checkValidMove(moveInput);
 		moves[moveCount] = moveInput;
 		moveCount++;
@@ -375,6 +403,15 @@ int main()
 			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
+			while (!cin >> moveInput) 
+			{
+				cout << "INVALID INPUT." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+				cout << line1 << endl << line2 << endl << line3 << endl;
+				cin >> moveInput;
+			}
 			checkValidMove(moveInput);
 			moves[moveCount] = moveInput;
 			moveCount++;
@@ -392,6 +429,15 @@ int main()
 			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
+			while (!cin >> moveInput) 
+			{
+				cout << "INVALID INPUT." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+				cout << line1 << endl << line2 << endl << line3 << endl;
+				cin >> moveInput;
+			}
 			checkValidMove(moveInput);
 			moves[moveCount] = moveInput;
 			moveCount++;
@@ -406,9 +452,18 @@ int main()
 			}
 			cout << endl;
 		}
-		cout << "Player 2 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
+		cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 		cout << line1 << endl << line2 << endl << line3 << endl;
 		cin >> moveInput;
+		while (!cin >> moveInput) 
+			{
+				cout << "INVALID INPUT." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Top Left = 1 and Bottom Right = 9)" << endl;
+				cout << line1 << endl << line2 << endl << line3 << endl;
+				cin >> moveInput;
+			}
 		checkValidMove(moveInput);
 		moves[moveCount] = moveInput;
 		moveCount++;
