@@ -22,11 +22,11 @@ int checkValidMove(int num)
 {
 	int check = 1;
 	int check1 = 1;
-	if (num > 10 || num < 1) //User input validation
+	if (num > 9 || num < 1) //User input validation
 	{
 		while (check != 0)
 		{
-			if (num > 10 || num < 1)
+			if (num > 9 || num < 1)
 			{
 				system("CLS");
 				cout << line1 << endl << line2 << endl << line3 << endl;
@@ -66,7 +66,7 @@ int checkValidMove(int num)
 		}
 		while (check1 != 0)
 		{
-			if (num > 10 || num < 1)
+			if (num > 9 || num < 1)
 			{
 				system("CLS");
 				cout << line1 << endl << line2 << endl << line3 << endl;
