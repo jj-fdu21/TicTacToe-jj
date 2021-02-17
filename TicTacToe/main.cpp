@@ -38,17 +38,6 @@ int checkValidMove(int num)
 				check--;
 				moveInput = num;
 			}
-			for (int i = 0; i < 9; i++)
-			{
-				if (num == moves[i])
-				{
-					system("CLS");
-					cout << line1 << endl << line2 << endl << line3 << endl;
-					cout << "That Move Has Already Been Made, Please Make A Different Move (1-9)" << endl;
-					cin >> num;
-					i = 0;
-				}
-			}
 		}
 	}
 	while (check1 != 0)
