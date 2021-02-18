@@ -14,7 +14,7 @@ static string line2 = "?  ?  ?";
 static string line3 = "?  ?  ?";
 static string player1Indicator = "X"; //Assigned "X" to player one 
 static string player2Indicator = "O"; //Asssigned "O" to player two
-static int moveInput;
+static double moveInput;
 static int moves[9];
 
 //Method used for checking valid moves, making sure no duplicate moves and no numbers greater than 9 or less than 1
@@ -307,7 +307,7 @@ int main()
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
 			//Checks input to see if it is a number or a string , if the input is a string the program will ask for reinput.
-			while (!cin >> moveInput) 
+			while (!cin >> (int)moveInput) 
 			{
 				cout << "INVALID INPUT." << endl;
 				cin.clear();
@@ -339,7 +339,7 @@ int main()
 			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
-			while (!cin >> moveInput) 
+			while (!cin >> (int)moveInput) 
 			{
 				cout << "INVALID INPUT." << endl;
 				cin.clear();
@@ -367,7 +367,7 @@ int main()
 		cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 		cout << line1 << endl << line2 << endl << line3 << endl;
 		cin >> moveInput;
-		while (!cin >> moveInput) 
+		while (!cin >> (int)moveInput) 
 		{
 			cout << "INVALID INPUT." << endl;
 			cin.clear();
@@ -403,7 +403,7 @@ int main()
 			cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
-			while (!cin >> moveInput) 
+			while (!cin >> (int)moveInput) 
 			{
 				cout << "INVALID INPUT." << endl;
 				cin.clear();
@@ -429,7 +429,7 @@ int main()
 			cout << "Player 1 (X), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 			cout << line1 << endl << line2 << endl << line3 << endl;
 			cin >> moveInput;
-			while (!cin >> moveInput) 
+			while (!cin >> (int)moveInput) 
 			{
 				cout << "INVALID INPUT." << endl;
 				cin.clear();
@@ -455,7 +455,7 @@ int main()
 		cout << "Player 2 (O), Select a Number 1-9 To Select Your Move. (Please read from left to right where top left = 1 and bottom right = 9)" << endl;
 		cout << line1 << endl << line2 << endl << line3 << endl;
 		cin >> moveInput;
-		while (!cin >> moveInput) 
+		while (!cin >> (int)moveInput) 
 			{
 				cout << "INVALID INPUT." << endl;
 				cin.clear();
